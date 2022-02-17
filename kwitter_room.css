@@ -1,0 +1,17 @@
+.logo{
+    height: 70px;
+    width: 100px;
+}
+#divy{
+    background-color: rgb(14, 93, 212);
+    width: fit-content;
+    height: fit-content;
+}
+#logout
+{
+	font-size: 20px; float: right;
+    background-color: red;
+    border-radius: 10px;
+    border-color: white;
+    height: 35px;
+}
