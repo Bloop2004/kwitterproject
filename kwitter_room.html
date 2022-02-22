@@ -2,22 +2,24 @@
     <head>
         <title>St.Fairy School's chating interface</title>
         <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="kwitter_room.css">
-<script src="kwitter_room.js"></script>
     </head>
-    <body onload="name_display()">
+    <body>
+        
     <span>
         <img src="download (1).png" class="logo">
         <label id="Username_displayer">
 
         </label>
     </span>
-    <button id="logout" class="glyphicon glyphicon-log-out">logout</button>
+    <button id="logout" class="glyphicon glyphicon-log-out" onclick="logouty()">logout</button>
     <center>
         <h2 id="welcome_displayer" ></h2>
         <h4>add or join any room you want to chat in now!</h4>
@@ -26,9 +28,11 @@
         <button id="add_roomy_btn" onclick="add_room()" class="btn btn-warning">Add/Join room</button>
         </div>
         <h3>#Trending Rooms</h3>
-        <div>
+        <div id="output">
 
         </div>
     </center>
     </body>
+    <script src="kwitter_room.js"></script>
+
 </html>

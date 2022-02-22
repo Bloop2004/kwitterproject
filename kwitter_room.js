@@ -12,6 +12,31 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
 nameo = localStorage.getItem("Username"); 
-function name_display(){
+
 document.getElementById("welcome_displayer").innerHTML = "Welcome "+nameo+"!";
+document.getElementById("Username_displayer").innerHTML = nameo;
+function add_room(){
+  room_nameo = document.getElementById("room_name_taker").value;
+  firebase.database().ref("/").child(room_nameo).update({
+    purpose: "create room"
+  });
+  localStorage.setItem("room_name", room_nameo);
+   window.location = "kwitter_page.html";
+}
+   function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
+    Room_names = childKey;
+   //Start code
+   row = "<div class='room_name' id="+Room_names+" onclick='redirectToRoom(this.id)'>#"+Room_names+"</div>";
+   document.getElementById("output").innerHTML += row;
+   //End code
+   });});}
+getData();
+function redirectToRoom(name){
+    localStorage.setItem("room_name" , name);
+    window.location = "kwitter_page.html";
+}
+function logouty(){
+  localStorage.removeItem("room_name");
+  localStorage.removeItem("Username");
+  window.location = "index.html";
 }
