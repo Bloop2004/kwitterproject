@@ -64,13 +64,14 @@ background-image: linear-gradient(to right top, #33a0f1, #2591d9, #1882c1, #0a73
 
 .input_div_message_page
 {
-	position: fixed;bottom: 0px;width: 100%;background: rgba(255,255,255,0.8);
+	justify-content: center; position:fixed;bottom: 0px;width: 80%;background: rgba(255,255,255,0.8);
+	margin-left: 100px;
 }
 .input_div_message_page label
 {
 	color: black;
 }
-.input_div_message_page #msg
+.input_div_message_page #msg_taker
 {
 	width: 80%;
 }
